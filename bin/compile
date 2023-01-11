@@ -10,17 +10,29 @@ ENV_DIR=$3
 echo "## Build dir path"
 echo $BUILD_DIR
 
-echo "## Env var path"
-echo $ENV_DIR
-
-ls -al $ENV_DIR
-cat $ENV_DIR/WEB_APP
-value=`cat $ENV_DIR/WEB_APP`
-echo "WEB_APP is $value"
+# ENV_DIR is a directory that contains a file for each of the application’s configuration variables.
+# The name of the file is the config key and the contents of the file is the config value. 
+# The equivalent of config var S3_KEY=8N029N81 is a file with the name S3_KEY and contents 8N029N81.
+# https://devcenter.heroku.com/articles/buildpack-api
+# Get the config variable value for the key WEB_APP
+web_app=`cat $ENV_DIR/WEB_APP`
+echo "The web app is $web_app"
 
 
 echo "### ls modules"
 ls $BUILD_DIR/modules
+
+
+
+case "$web_app" in
+  FRONT_OFFICE)
+    echo "web app was front office!"
+    ;;
+  *)
+    echo "Unknown web app $web_app"
+    ;;
+  ;;
+esac
 
 echo "### Deleting modules and dirs not needed run-time. This to reduce slug size."
 rm -rf "$BUILD_DIR/modules/calculations"
