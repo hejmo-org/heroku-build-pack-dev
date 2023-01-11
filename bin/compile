@@ -5,9 +5,15 @@ echo "################################################"
 
 echo "### Assigning build path"
 BUILD_DIR=$1
+ENV_DIR=$3
 
 echo "## Build dir path"
 echo $BUILD_DIR
+
+echo "## Env var path"
+echo $ENV_DIR
+
+
 
 echo "### ls modules"
 ls $BUILD_DIR/modules
