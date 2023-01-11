@@ -31,7 +31,6 @@ case "$web_app" in
   *)
     echo "Unknown web app $web_app"
     ;;
-  ;;
 esac
 
 echo "### Deleting modules and dirs not needed run-time. This to reduce slug size."
