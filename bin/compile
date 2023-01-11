@@ -1,0 +1,54 @@
+#!/bin/sh
+echo "################################################"
+echo "Running Hejmos build pack - compile script start"
+echo "################################################"
+
+echo "### Assigning build path"
+BUILD_DIR=$1
+
+echo "## Build dir path"
+echo $BUILD_DIR
+
+echo "### ls modules"
+ls $BUILD_DIR/modules
+
+echo "### Deleting modules and dirs not needed run-time. This to reduce slug size."
+rm -rf "$BUILD_DIR/modules/calculations"
+rm -rf "$BUILD_DIR/modules/common"
+rm -rf "$BUILD_DIR/modules/config"
+rm -rf "$BUILD_DIR/modules/data"
+rm -rf "$BUILD_DIR/modules/data-objects"
+rm -rf "$BUILD_DIR/modules/file-storage"
+rm -rf "$BUILD_DIR/modules/interfaces"
+rm -rf "$BUILD_DIR/modules/test-utils"
+rm -rf "$BUILD_DIR/target"
+rm -rf "$BUILD_DIR/modules/target"
+rm -rf "$BUILD_DIR/modules/web-apps/target"
+echo "### Done deleting modules"
+
+echo "### Deleting files that should not be on production. This for security."
+# Delete JavaScript test files
+rm -rf "$BUILD_DIR/modules/web-apps/front-office/target/classes/web/java_script_tests"
+rm -rf "$BUILD_DIR/modules/web-apps/glimminge/target/classes/web/java_script_tests"
+rm -rf "$BUILD_DIR/modules/web-apps/mandarfen/target/classes/web/java_script_tests"
+rm -rf "$BUILD_DIR/modules/web-apps/sys-admin/target/classes/web/java_script_tests"
+rm -rf "$BUILD_DIR/modules/web-apps/www/target/classes/web/java_script_tests"
+
+# Delete JavaScript test lib
+rm -rf "$BUILD_DIR/modules/web-apps/www/target/classes/web/shared/green_tea"
+echo "### Done deleting files that should not be on production."
+
+
+
+echo "### ls modules"
+ls $BUILD_DIR/modules
+
+echo "### ls modules/web-apps"
+ls $BUILD_DIR/modules/web-apps
+echo 
+
+
+
+echo "################################################"
+echo "Running Hejmos build pack - compile script end"
+echo "################################################"

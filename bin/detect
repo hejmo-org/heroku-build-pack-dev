@@ -1,0 +1,10 @@
+#!/bin/sh
+echo "################################################"
+echo "Running Hejmos build pack - detect script start"
+echo "################################################"
+
+echo "################################################"
+echo "Running Hejmos build pack - detect script end"
+echo "################################################"
+
+exit 0
