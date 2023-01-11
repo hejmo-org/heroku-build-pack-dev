@@ -25,7 +25,7 @@ ls $BUILD_DIR/modules
 
 
 case "$web_app" in
-  FRONT_OFFICE)
+  "FRONT_OFFICE")
     echo "web app was front office!"
     ;;
   *)
