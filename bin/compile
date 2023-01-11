@@ -14,6 +14,7 @@ echo "## Env var path"
 echo $ENV_DIR
 
 ls -al $ENV_DIR
+cat $ENV_DIR/WEB_APP
 
 
 echo "### ls modules"
