@@ -27,6 +27,11 @@ ls $BUILD_DIR/modules
 case "$web_app" in
   "FRONT_OFFICE")
     echo "web app was front office!"
+    rm -rf "$BUILD_DIR/modules/glimminge"
+    rm -rf "$BUILD_DIR/modules/mandarfen"
+    rm -rf "$BUILD_DIR/modules/secrets"
+    rm -rf "$BUILD_DIR/modules/sys-admin"
+    rm -rf "$BUILD_DIR/modules/www"
     ;;
   *)
     echo "Unknown web app $web_app"
