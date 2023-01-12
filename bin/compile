@@ -15,16 +15,16 @@ ENV_DIR=$3
 # Get the config variable value for the key WEB_APP
 web_app=`cat $ENV_DIR/WEB_APP`
 echo "### The web app is $web_app"
-echo ""
+echo " "
 
 
 echo "### Before delete ls modules"
 ls $BUILD_DIR/modules
-echo ""
+echo " "
 
 echo "### Before delete ls modules/web-apps"
 ls $BUILD_DIR/modules/web-apps
-echo ""
+echo " "
 
 echo "### Deleting modules and dirs not needed run-time. This to reduce slug size."
 case "$web_app" in
@@ -81,15 +81,15 @@ rm -rf "$BUILD_DIR/modules/web-apps/www/target/classes/web/java_script_tests"
 # Delete JavaScript test lib
 rm -rf "$BUILD_DIR/modules/web-apps/www/target/classes/web/shared/green_tea"
 echo "### Done deleting files that should not be on production."
-echo ""
+echo " "
 
 echo "### After delete ls modules"
 ls $BUILD_DIR/modules
-echo ""
+echo " "
 
 echo "### After delete ls modules/web-apps"
 ls $BUILD_DIR/modules/web-apps
-echo ""
+echo " "
 
 echo "################################################"
 echo "Running Hejmos build pack - compile script end"
