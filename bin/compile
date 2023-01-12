@@ -29,7 +29,6 @@ echo " "
 echo "### Deleting modules and dirs not needed run-time. This to reduce slug size."
 case "$web_app" in
   "FRONT_OFFICE")
-    echo "web app was front office!"
     rm -rf "$BUILD_DIR/modules/web-apps/glimminge"
     rm -rf "$BUILD_DIR/modules/web-apps/mandarfen"
     rm -rf "$BUILD_DIR/modules/web-apps/secrets"
@@ -37,7 +36,6 @@ case "$web_app" in
     rm -rf "$BUILD_DIR/modules/web-apps/www"
     ;;
   "GLIMMINGE")
-    echo "web app was front office!"
     rm -rf "$BUILD_DIR/modules/web-apps/front-office"
     rm -rf "$BUILD_DIR/modules/web-apps/mandarfen"
     rm -rf "$BUILD_DIR/modules/web-apps/secrets"
@@ -45,7 +43,6 @@ case "$web_app" in
     rm -rf "$BUILD_DIR/modules/web-apps/www"
     ;;
   "WWW")
-    echo "web app was front office!"
     rm -rf "$BUILD_DIR/modules/web-apps/front-office"
     rm -rf "$BUILD_DIR/modules/web-apps/glimminge"
     rm -rf "$BUILD_DIR/modules/web-apps/mandarfen"
