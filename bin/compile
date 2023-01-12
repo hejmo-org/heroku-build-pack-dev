@@ -17,7 +17,6 @@ web_app=`cat $ENV_DIR/WEB_APP`
 echo "### The web app is $web_app"
 echo " "
 
-
 echo "### ls modules - before delete"
 ls $BUILD_DIR/modules
 echo " "
@@ -40,6 +39,27 @@ case "$web_app" in
     rm -rf "$BUILD_DIR/modules/web-apps/mandarfen"
     rm -rf "$BUILD_DIR/modules/web-apps/secrets"
     rm -rf "$BUILD_DIR/modules/web-apps/sys-admin"
+    rm -rf "$BUILD_DIR/modules/web-apps/www"
+    ;;
+  "MANDARFEN")
+    rm -rf "$BUILD_DIR/modules/web-apps/front-office"
+    rm -rf "$BUILD_DIR/modules/web-apps/glimminge"
+    rm -rf "$BUILD_DIR/modules/web-apps/secrets"
+    rm -rf "$BUILD_DIR/modules/web-apps/sys-admin"
+    rm -rf "$BUILD_DIR/modules/web-apps/www"
+    ;;
+  "SECRETS")
+    rm -rf "$BUILD_DIR/modules/web-apps/front-office"
+    rm -rf "$BUILD_DIR/modules/web-apps/glimminge"
+    rm -rf "$BUILD_DIR/modules/web-apps/mandarfen"
+    rm -rf "$BUILD_DIR/modules/web-apps/sys-admin"
+    rm -rf "$BUILD_DIR/modules/web-apps/www"
+    ;;
+  "SYS_ADMIN")
+    rm -rf "$BUILD_DIR/modules/web-apps/front-office"
+    rm -rf "$BUILD_DIR/modules/web-apps/glimminge"
+    rm -rf "$BUILD_DIR/modules/web-apps/mandarfen"
+    rm -rf "$BUILD_DIR/modules/web-apps/secrets"
     rm -rf "$BUILD_DIR/modules/web-apps/www"
     ;;
   "WWW")
