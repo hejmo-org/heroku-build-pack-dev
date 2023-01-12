@@ -15,15 +15,19 @@ echo $BUILD_DIR
 # The equivalent of config var S3_KEY=8N029N81 is a file with the name S3_KEY and contents 8N029N81.
 # https://devcenter.heroku.com/articles/buildpack-api
 # Get the config variable value for the key WEB_APP
-web_app=`cat $ENV_DIR/WEB_APP`
+web_app=`### cat $ENV_DIR/WEB_APP`
 echo "The web app is $web_app"
 
 
-echo "### ls modules"
+echo "### Before delete ls modules"
 ls $BUILD_DIR/modules
 
+echo "### Before delete ls modules/web-apps"
+ls $BUILD_DIR/modules/web-apps
 
 
+
+echo "### Deleting modules and dirs not needed run-time. This to reduce slug size."
 case "$web_app" in
   "FRONT_OFFICE")
     echo "web app was front office!"
@@ -54,7 +58,6 @@ case "$web_app" in
     ;;
 esac
 
-echo "### Deleting modules and dirs not needed run-time. This to reduce slug size."
 rm -rf "$BUILD_DIR/modules/calculations"
 rm -rf "$BUILD_DIR/modules/common"
 rm -rf "$BUILD_DIR/modules/config"
@@ -82,8 +85,12 @@ echo "### Done deleting files that should not be on production."
 
 
 
-echo "### ls modules"
+echo "### After delete ls modules"
 ls $BUILD_DIR/modules
+
+echo "### After delete ls modules/web-apps"
+ls $BUILD_DIR/modules/web-apps
+
 
 echo "### ls modules/web-apps"
 ls $BUILD_DIR/modules/web-apps
