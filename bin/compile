@@ -33,6 +33,22 @@ case "$web_app" in
     rm -rf "$BUILD_DIR/modules/web-apps/sys-admin"
     rm -rf "$BUILD_DIR/modules/web-apps/www"
     ;;
+  "GLIMMINGE")
+    echo "web app was front office!"
+    rm -rf "$BUILD_DIR/modules/web-apps/front-office"
+    rm -rf "$BUILD_DIR/modules/web-apps/mandarfen"
+    rm -rf "$BUILD_DIR/modules/web-apps/secrets"
+    rm -rf "$BUILD_DIR/modules/web-apps/sys-admin"
+    rm -rf "$BUILD_DIR/modules/web-apps/www"
+    ;;
+  "WWW")
+    echo "web app was front office!"
+    rm -rf "$BUILD_DIR/modules/web-apps/front-office"
+    rm -rf "$BUILD_DIR/modules/web-apps/glimminge"
+    rm -rf "$BUILD_DIR/modules/web-apps/mandarfen"
+    rm -rf "$BUILD_DIR/modules/web-apps/secrets"
+    rm -rf "$BUILD_DIR/modules/web-apps/sys-admin"
+    ;;
   *)
     echo "Unknown web app $web_app"
     ;;
