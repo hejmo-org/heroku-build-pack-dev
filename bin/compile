@@ -18,11 +18,11 @@ echo "### The web app is $web_app"
 echo " "
 
 
-echo "### Before delete ls modules"
+echo "### ls modules - before delete"
 ls $BUILD_DIR/modules
 echo " "
 
-echo "### Before delete ls modules/web-apps"
+echo "### ls modules/web-apps - before delete"
 ls $BUILD_DIR/modules/web-apps
 echo " "
 
@@ -80,11 +80,11 @@ rm -rf "$BUILD_DIR/modules/web-apps/www/target/classes/web/shared/green_tea"
 echo "### Done deleting files that should not be on production."
 echo " "
 
-echo "### After delete ls modules"
+echo "### ls modules - after delete"
 ls $BUILD_DIR/modules
 echo " "
 
-echo "### After delete ls modules/web-apps"
+echo "### ls modules/web-apps - after delete"
 ls $BUILD_DIR/modules/web-apps
 echo " "
 
