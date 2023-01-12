@@ -1,4 +1,5 @@
 #!/bin/sh
+echo " "
 echo "################################################"
 echo "Running Hejmos build pack - detect script start"
 echo "################################################"
