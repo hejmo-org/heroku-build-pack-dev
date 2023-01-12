@@ -3,12 +3,10 @@ echo "################################################"
 echo "Running Hejmos build pack - compile script start"
 echo "################################################"
 
-echo "### Assigning build path"
+# Get the build path
 BUILD_DIR=$1
+# Get the directory that contain configuration variables
 ENV_DIR=$3
-
-echo "## Build dir path"
-echo $BUILD_DIR
 
 # ENV_DIR is a directory that contains a file for each of the application’s configuration variables.
 # The name of the file is the config key and the contents of the file is the config value. 
@@ -27,8 +25,6 @@ echo ""
 echo "### Before delete ls modules/web-apps"
 ls $BUILD_DIR/modules/web-apps
 echo ""
-
-
 
 echo "### Deleting modules and dirs not needed run-time. This to reduce slug size."
 case "$web_app" in
@@ -87,8 +83,6 @@ rm -rf "$BUILD_DIR/modules/web-apps/www/target/classes/web/shared/green_tea"
 echo "### Done deleting files that should not be on production."
 echo ""
 
-
-
 echo "### After delete ls modules"
 ls $BUILD_DIR/modules
 echo ""
@@ -96,8 +90,6 @@ echo ""
 echo "### After delete ls modules/web-apps"
 ls $BUILD_DIR/modules/web-apps
 echo ""
-
-
 
 echo "################################################"
 echo "Running Hejmos build pack - compile script end"
