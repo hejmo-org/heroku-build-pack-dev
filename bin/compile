@@ -15,8 +15,8 @@ echo $BUILD_DIR
 # The equivalent of config var S3_KEY=8N029N81 is a file with the name S3_KEY and contents 8N029N81.
 # https://devcenter.heroku.com/articles/buildpack-api
 # Get the config variable value for the key WEB_APP
-web_app=`### cat $ENV_DIR/WEB_APP`
-echo "The web app is $web_app"
+web_app=`cat $ENV_DIR/WEB_APP`
+echo "### The web app is $web_app"
 
 
 echo "### Before delete ls modules"
