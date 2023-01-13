@@ -62,7 +62,7 @@ case "$web_app" in
     rm -rf "$BUILD_DIR/modules/web-apps/secrets"
     rm -rf "$BUILD_DIR/modules/web-apps/www"
     ;;
-  "WWW")
+  "www")
     rm -rf "$BUILD_DIR/modules/web-apps/front-office"
     rm -rf "$BUILD_DIR/modules/web-apps/glimminge"
     rm -rf "$BUILD_DIR/modules/web-apps/mandarfen"
